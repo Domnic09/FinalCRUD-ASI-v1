@@ -1,0 +1,35 @@
+﻿@model ASI.Basecode.Services.ServiceModels.BookViewModel
+@using static ASI.Basecode.Resources.Views.Button
+@using static ASI.Basecode.Resources.Views.Book
+
+<h2>Add New Book</h2>
+
+<form method="post" enctype="multipart/form-data" asp-action="AddBook">
+    
+    <div class="form-group">
+        <label>@Title</label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>@Author</label>
+        <input class="form-control" asp-for="Author" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label>@Description</label>
+        <input class="form-control" asp-for="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+       @*  <label>Choose Image</label> *@
+        <label>@Image</label>
+        <input asp-for="ImageFile" type="file" accept=".png" class="form-control-file"/>
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">@Add</button>
+</form>
